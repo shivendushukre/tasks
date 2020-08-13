@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<h1>User {{ user.username }} logged in!</h1>
+<form method="post" action="{% url 'signup_again'%}">
+    {%csrf_token%}
+    <input type="submit" value="Logout">
+</form>
+{% endif %}
+</body>
+</html>

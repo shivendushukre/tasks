@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+<h1>Sign up Page</h1>
+
+{% if message5 %}
+<h2>{{message5}}</h2>
+{%endif%}
+
+{% if message2 %}
+<h2>{{message2}}</h2>
+{% endif %}
+
+{% if message1 %}
+<h2>{{message1}}</h2>
+{% endif %}
+
+{% if user %}
+<form method="post" action="{%url 'register'%}">
+    {%csrf_token%}
+    Username:- <input type="text" name="username"><br><br>
+    Email ID:- <input type="text" name="email"><br><br>
+    First Name:- <input type="text" name="firstname"><br><br>
+    Last Name:- <input type="text" name="lastname"><br><br>
+    Phone Number:- <input type="number" name="phone"><br><br>
+    Password:- <input type="password" name="password"><br><br>
+    Confirm Password:- <input type="password" name="confirm"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+{% endif %}
+<br><br>
+<a href="{% url 'login' %}">Already Signed up? Login from here</a>
+</body>
+</html>

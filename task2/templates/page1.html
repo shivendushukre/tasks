@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<a href="{% url 'page2' %}">Check other users info?</a><br><br>
+    <form method="post">
+        {%csrf_token%}
+        Enter First Name:- <input type="text" name="firstname"><br><br>
+        Enter Last Name:- <input type="text" name="lastname"><br><br>
+        Enter Email ID:- <input type="email" name="email"><br><br>
+        Enter Phone Number:- <input type="number" name="phone no"><br><br>
+        Gender:- <input type="radio" name="gender">Male<br><br>
+                <input type="radio" name="gender">Female<br><br>
+                <input type="radio" name="gender">Other<br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
